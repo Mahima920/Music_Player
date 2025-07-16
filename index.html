@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="player-container" tabindex="0">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <h3 class="now-playing-title">Now Playing</h3>
+      <div class="album-display">
+        <img id="disc" src="assets/images/disc1.png" alt="Disc" />
+      </div>
+      <div class="song-info">
+        <h2 id="title">Song Title</h2>
+        <p id="artist">Artist Name</p>
+      </div>
+      <div class="controls">
+        <button id="prev" aria-label="Previous" tabindex="0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M11 19V5l-9 7 9 7zm2-14v14h2V5h-2z"/>
+          </svg>
+        </button>
+        <button id="play" aria-label="Play/Pause" aria-pressed="false" tabindex="0">
+          <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24" style="display: none;">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+          </svg>
+        </button>
+        <button id="next" aria-label="Next" tabindex="0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M13 5v14l9-7-9-7zm-2 0v14H9V5h2z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="progress-container">
+        <span id="current-time">0:00</span>
+        <input type="range" id="progress" min="0" max="100" value="0" tabindex="0">
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="playlist-panel">
+      <div class="playlist-header">Playlist</div>
+      <ul class="playlist" id="playlist"></ul>
+    </div>
+
+    <audio id="audio"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
